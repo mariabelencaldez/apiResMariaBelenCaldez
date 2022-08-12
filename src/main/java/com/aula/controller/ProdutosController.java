@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.aula.entidades.ContatoEntidade;
 import com.aula.entidades.Produtos;
 import com.aula.repository.IProdutosRepository;
 
@@ -33,7 +32,7 @@ public class ProdutosController {
 	
 	@GetMapping("/produtos")
 	public ResponseEntity<List<Produtos>> getProdutos() {
-		List<Produtos> produtos = (List)repo.findAll();
+		List<Produtos> produtos = (List<Produtos>)repo.findAll();
 		return ResponseEntity.status(HttpStatus.OK).body(produtos) ;
 	}
 
